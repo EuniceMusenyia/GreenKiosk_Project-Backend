@@ -4,5 +4,5 @@ from django.contrib import admin
 from .models import Order
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ("quantity", "date", "total", "name","date_created")
+    list_display = ("quantity", "date","total","name","date_created")
 admin.site.register(Order, OrderAdmin)

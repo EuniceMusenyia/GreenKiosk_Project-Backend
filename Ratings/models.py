@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Ratings(models.Model):
+class Rating(models.Model):
     review_message = models.TextField(max_length =100)
     sender = models.CharField(max_length=32)
     value = models.PositiveIntegerField()

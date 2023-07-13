@@ -1,9 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class Payments(models.Model):
+class Payment(models.Model):
     amount = models.DecimalField(max_digits=6, decimal_places=2)
-    order = models.PositiveBigIntegerField()
+    order_number = models.CharField(max_length=32)
+    name = models.CharField(max_length=32)
     status = models.CharField(max_length=32)
     date = models.DateField()
     payment_method = models.CharField(max_length=32)

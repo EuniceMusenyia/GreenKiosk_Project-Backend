@@ -1,7 +1,9 @@
 from django.db import models
+from Vendor.models import Vendor
 
 # Create your models here.
 class Product(models.Model):
+    vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     name = models.CharField(max_length = 32)
     description = models.TextField()
     image = models.ImageField()
@@ -11,3 +13,4 @@ class Product(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     def __str__(self):           ####self acts as string representation of the class//**
         return self.name
+    
