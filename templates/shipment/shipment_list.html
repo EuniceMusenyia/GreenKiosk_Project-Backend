@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Inventory/product_list.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <h1>Payment list</h1>
+        <thead>
+            <tr>
+
+                <th>Shipping Services</th>
+                <th>Shipping Location</th>
+                <th>Shipping Method</th>
+                <th>Handling Time</th>
+                <th>Transit Time</th>
+                <th>Shipment Details</th>
+                <th>Edit Shipment</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for shipment in shipments %}
+            <tr>
+                <td>{{ shipment.shipping_services }}</td>
+                <td>{{ shipment.shipping_location }}</td>
+                <td>{{ shipment.shipping_method}}</td>
+                <td>{{ shipment.handling_time}}</td>
+                <td>{{ shipment.transit_time}}</td>
+
+                <td> <a href="{% url 'payment_detail_view' id=shipment.id %}">Order Shipment</a> </td>
+                <td><a href="{% url 'payment_edit_view' id=shipment.id %}">Edit Shipment</a> </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
