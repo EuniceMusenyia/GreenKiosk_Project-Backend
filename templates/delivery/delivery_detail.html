@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Inventory/product_detail.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <h4>Delivery Date:  {{delivery.date}} </h4>
+    <p>Delivery Cost:  {{delivery.delivery_cost}} </p>
+    <p>Delivery Status:  {{delivery.order_status}} </p>
+    <p>Delivery Duration:  {{delivery.delivery_duration}} </p>
+    <p>Delivery Person:  {{delivery.delivery_person}} </p>
+    <p>Delivery Method:  {{delivery.delivery_method}} </p>
+</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+* Apply basic styling to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  /* Style table headers */
+  th {
+    background-color: #F2F2F2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  /* Style table data cells */
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  /* Style the link in the last column */
+  td a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #007BFF;
+  }
+  /* Apply hover effect to the link */
+  td a:hover {
+    background-color: #F2F2F2;
+  }
+  /* Apply alternate row color */
+  tr:nth-child(even) {
+    background-color: #F2F2F2;
+  }

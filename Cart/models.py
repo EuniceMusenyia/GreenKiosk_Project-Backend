@@ -7,7 +7,6 @@ class Cart (models.Model):
 
     product = models.ManyToManyField(Product)
     order = models.ForeignKey(Order,on_delete=models.CASCADE)
-    
     price = models.DecimalField(max_digits=6, decimal_places=2)
     quantity = models.PositiveBigIntegerField()
     shipping_cost = models.DecimalField(max_digits=6, decimal_places=2)
