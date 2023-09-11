@@ -7,8 +7,8 @@ from .forms import NotificationUploadForm
 # Create your views here.
 def upload_notification(request):
     if request.method == "POST":
-        form = NotificationUploadForm(request.POST,request.Files)
-        if form.isvalid():
+        form = NotificationUploadForm(request.POST,request.FILES)
+        if form.is_valid():
             form.save()
     
     else:

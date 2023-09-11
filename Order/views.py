@@ -10,8 +10,8 @@ from django.shortcuts import redirect
 # Create your views here.
 def upload_order(request):
     if request.method == "POST":
-        form = OrderUploadForm(request.POST,request.Files)
-        if form.isvalid():
+        form = OrderUploadForm(request.POST,request.FILES)
+        if form.is_valid():
             form.save()
     
     else:

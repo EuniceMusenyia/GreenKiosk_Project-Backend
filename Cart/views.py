@@ -7,8 +7,8 @@ from .models import Cart
 # Create your views here.
 def upload_cart(request):
     if request.method == "POST":
-        form = CartUploadForm(request.POST,request.Files)
-        if form.isvalid():
+        form = CartUploadForm(request.POST,request.FILES)
+        if form.is_valid():
             form.save()
     
     else:

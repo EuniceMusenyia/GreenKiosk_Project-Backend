@@ -7,8 +7,8 @@ from .models import Shipment
 # Create your views here.
 def upload_shipment(request):
     if request.method == "POST":
-        form = ShipmentUploadForm(request.POST,request.Files)
-        if form.isvalid():
+        form = ShipmentUploadForm(request.POST,request.FILES)
+        if form.is_valid():
             form.save()
     
     else:

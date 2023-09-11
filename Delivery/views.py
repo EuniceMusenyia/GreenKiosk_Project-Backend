@@ -9,7 +9,7 @@ from Delivery.models import Delivery
 def upload_delivery(request):
     if request.method == "POST":
         form = DeliveryUploadForm(request.POST,request.FILES)
-        if form.isvalid():
+        if form.is_valid():
             form.save()
     
     else:

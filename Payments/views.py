@@ -8,8 +8,8 @@ from django.shortcuts import redirect
 # Create your views here.
 def upload_payment(request):
     if request.method == "POST":
-        form = PaymentUploadForm(request.POST,request.Files)
-        if form.isvalid():
+        form = PaymentUploadForm(request.POST,request.FILES)
+        if form.is_valid():
             form.save()
     
     else:

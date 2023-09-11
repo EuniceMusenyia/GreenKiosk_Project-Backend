@@ -3,14 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Inventory/product_detail.css' %}">
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .customer-details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .customer-details h4 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        .customer-details p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .customer-details span {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .customer-details button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .customer-details button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2> Edit Customer Details</h2>
-    <form method="POST">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button type="submit">Save</button>
-    </form>
+    <div class="customer-details">
+        <h4>Customer Details: {{ customer.name }}</h4>
+        <p>Email: {{ customer.email }}</p>
+        <p>Contact: <span>{{ customer.contact }}</span></p>
+        <p>Password: <span>{{ customer.password }}</span></p>
+        <p>Location: <span>{{ customer.location }}</span></p>
+        <p><a href="{% url 'customer_upload_view' %}"><button>Create New Customer</button></a></p>
+    </div>
 </body>
 </html>
